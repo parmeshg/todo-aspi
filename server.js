@@ -55,6 +55,19 @@ app.post('/todos',function (req,res){
 	res.json(body);
 });
 
+app.delete('/todos/:id',function (req,res){
+	var todoId = parseInt(req.params.id,10);
+	var matchedTodo = _.findWhere(todos, {id: todoId});
+
+	if(!matchedTodo)  {
+		return res.status(400).json({"error":"no todo found with given id"});
+	} else {
+       todos = _.without(todos, matchedTodo);
+       res.json(matchedTodo);
+	}
+});
+
+
 app.listen(PORT, function (){
 	console.log('TODO API web server is started on ' + PORT);
 });
