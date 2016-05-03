@@ -24,4 +24,6 @@ db.user = sequelize.import(__dirname+'/modules/user.js');
 db.todo.belongsTo(db.user);
 db.user.hasMany(db.todo);
 
+db.token = sequelize.import(__dirname+'/modules/token.js');
+
 module.exports = db;
