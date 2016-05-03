@@ -1,3 +1,5 @@
 node_modules/
 data/*.sqlite
 data/dev-todo-api.sqlite-journal
+playground/basic-sqlite-database.sqlite
+
